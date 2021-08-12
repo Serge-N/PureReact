@@ -1,8 +1,8 @@
 {
-  "name": "react",
+  "name": "static-tweet",
   "version": "1.0.0",
-  "description": "React example starter project",
-  "keywords": ["react", "starter"],
+  "description": "Creating simple react components!",
+  "keywords": ["react", "react-lessons"],
   "main": "src/index.js",
   "dependencies": {
     "react": "17.0.2",
