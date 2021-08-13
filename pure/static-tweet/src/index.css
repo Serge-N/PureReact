@@ -26,3 +26,23 @@
     color: #8899ac;
     font-size: 13px;
 }
+
+.time{
+    padding-left: 0.3em;
+}
+
+.time::before{
+    content: "\00b7";
+    padding-right: 00.3em;
+}
+
+.buttons{
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 1.4em;
+    color: #aab8c2;
+}
+
+.buttons i{
+    width: 80px;
+}
