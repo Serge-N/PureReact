@@ -27,6 +27,10 @@ function Tweet({ tweet }) {
   );
 }
 
+Tweet.propTypes = {
+  tweet : PropTypes.object.isRequired
+}
+
 const testTweet = {
   message: "Something about cattle.",
   gravatar: "31bfa0e42780cb4fb352dd6231c76614",
@@ -48,6 +52,10 @@ function Avatar({ hash }) {
   );
 }
 
+Avatar.propTypes = {
+  hash: PropTypes.string.isRequired
+}
+
 function Message({ message }) {
   return (
     <div className="message">
@@ -64,6 +72,13 @@ function Author({ author }) {
       <span className="handle">@{handle}</span>
     </span>
   );
+}
+
+Author.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    handle: PropTypes.string.isRequired
+  }).isRequired
 }
 
 const Time = ({ time }) => {
