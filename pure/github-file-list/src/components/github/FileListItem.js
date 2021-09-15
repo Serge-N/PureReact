@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Time from './Time';
+import Time from '../shared/Time.js';
 import CommitMessage from './CommitMessage';
 import FileName from './FileName';
 import FileIcon from './FileIcon';
