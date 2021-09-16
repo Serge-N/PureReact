@@ -108,5 +108,12 @@ tr{
 }
 
 .tweet-space{
-  margin-top: 10px;
+  margin:  auto ;
+  width: 980px;
+  padding-left: 380px;
+}
+
+.tweet{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
