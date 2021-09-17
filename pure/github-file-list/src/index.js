@@ -6,6 +6,7 @@ import GitFiles from './data/git-data';
 import Tweeter from './components/twitter/Twitter';
 import testTweet from './data/tweet-data';
 import Twillo from './components/trello/Twillo';
+import TwilloTasks from './data/twillo-data';
 
 const Execrise = () => (
     <div>
@@ -17,7 +18,7 @@ const Execrise = () => (
             <Tweeter tweets ={testTweet}/>
         </div>
         <div className="show-case">
-            <Twillo/>
+            <Twillo twi={TwilloTasks}/>
         </div>
     </div>
 );

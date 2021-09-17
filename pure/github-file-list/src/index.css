@@ -117,3 +117,37 @@ tr{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.master-card{
+  height: 300px;
+  width: 200px;
+  border-radius: 1px;
+  border: 3px lightblue solid;
+  margin: auto;
+  background-color: #ccc
+}
+
+.card-content{
+  margin: 2px;
+}
+
+.board-task{
+  background-color: white;
+  margin-inline: 5px;
+  margin-block: 8px;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.board-input{
+  margin-inline: 5px;
+  width: 92%;
+
+}
+
+input{
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: 1px solid black;
+}
