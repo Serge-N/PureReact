@@ -15,7 +15,7 @@ const TwilloTasks = [
         messages: [
             "Contribute to open source products.",
             "Use linux on all server apps.",
-            "Enjoy Azure as your primary data provider.",
+            "Enjoy Azure as your primary cloud provider.",
             "Have a sense of fashion, do UX."
         ]
     },
@@ -26,7 +26,8 @@ const TwilloTasks = [
             "You are young.",
             "You write code and design systems for a living.",
             "You are Cloud Certified Proffessional.",
-            "You have license to all major app store."]
+            "You have license to all major app stores."
+        ]
     }
 
 ];
