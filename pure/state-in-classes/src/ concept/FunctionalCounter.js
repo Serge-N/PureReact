@@ -1,21 +1,16 @@
 import React from "react";
+import Child from "./Child";
 
 function handleAction(event) {
-    console.log("Child did: " + event);
+    console.log("Child did: " + event.type);
 }
 
 function Parent() {
     return (
-        <Child onAction={handleAction} />
+        <Child onAction={handleAction} title="Call" />
     );
 }
 
-function Child({ onAction }) {
-    return (
-        <button onClick={onAction}>
-            Click Me!
-        </button>
-    );
-}
+
 
 export default Parent;
