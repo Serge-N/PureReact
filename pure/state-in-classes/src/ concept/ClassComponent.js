@@ -19,6 +19,10 @@ class CountingParent extends React.Component {
         // increment value
         this.setState({
             actionCount: this.state.actionCount + 1
+            
+             // if a change is required here, then pass a function call back
+             // use functional state function when ever you can
+
         });
     }
 
