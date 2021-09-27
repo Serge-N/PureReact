@@ -21,8 +21,8 @@ class Home extends React.Component {
         console.log("Switch is state of :", action.type);
 
         this.setState({
-            bathroom: !this.state.bathroom
-        });
+            bathroom: this.bathroom = !this.bathroom
+         });
     }
 
     handleBSwitch(action) {
