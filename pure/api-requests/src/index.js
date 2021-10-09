@@ -4,6 +4,7 @@ import axios from "axios";
 
 // Options Axios and Fetch
 
+// skip loading feature and do in exec at the end.
 class Reddit extends React.Component {
     state = {
         posts: []
@@ -15,7 +16,6 @@ class Reddit extends React.Component {
                 const posts = res.data.data.children.map(
                     obj => obj.data
                 );
-
                 this.setState({ posts });
             });
     }
