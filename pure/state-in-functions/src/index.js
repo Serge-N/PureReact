@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import StepTracker from "./Stepbit";
 
 class OneTimeButton extends React.Component {
     state = {
@@ -31,16 +32,20 @@ function OneTimeButtonFunc({ onClick }) {
     }
 
     return (
-        <button  onClick={handleClick} disabled={clicked}>
+        <button onClick={handleClick} disabled={clicked}>
             You can still click me Once.
         </button>
     );
 }
 
 ReactDOM.render(
-<span>
-<OneTimeButton onClick={() => alert("hi")} /><br/>
-<OneTimeButtonFunc onClick={() => alert("hi")} />
-</span>
+    <div>
+        <OneTimeButton onClick={() => alert("hi")} />
+        <br />
+        <div style={{ margin: "1em" }}></div>
+        <OneTimeButtonFunc onClick={() => alert("hi")} />
+        <div style={{ margin: "1em" }}></div>
+        <StepTracker number={10}/>
+    </div>
     , document.querySelector("#root")
 );
