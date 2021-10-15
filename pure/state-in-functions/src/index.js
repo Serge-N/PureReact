@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import RandomList from "./RandomList";
 import StepTracker from "./Stepbit";
 
 class OneTimeButton extends React.Component {
@@ -46,6 +47,8 @@ ReactDOM.render(
         <OneTimeButtonFunc onClick={() => alert("hi")} />
         <div style={{ margin: "1em" }}></div>
         <StepTracker number={10}/>
+        <div style={{ margin: "1em" }}></div>
+        <RandomList/>
     </div>
     , document.querySelector("#root")
 );
