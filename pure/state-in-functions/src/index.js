@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import LightSwitch from "./LightSwitch";
+import MultiCounter from "./MultiCounter";
 import RandomList from "./RandomList";
 import StepTracker from "./Stepbit";
 
@@ -49,6 +51,10 @@ ReactDOM.render(
         <StepTracker number={10}/>
         <div style={{ margin: "1em" }}></div>
         <RandomList/>
+        <br/>
+        <MultiCounter/>
+        <br/>
+        <LightSwitch/>
     </div>
     , document.querySelector("#root")
 );
