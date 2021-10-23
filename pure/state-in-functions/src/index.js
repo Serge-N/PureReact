@@ -58,3 +58,11 @@ ReactDOM.render(
     </div>
     , document.querySelector("#root")
 );
+
+// if ing the data doesn't change the UI, then it shouldn't be in state.
+// Examples include :
+
+// i.   User-entered data.
+// ii.  Current selected itm.
+// iii. Data from a server
+// iv.  Open/closed  state e.g sidebars
