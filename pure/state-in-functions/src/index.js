@@ -66,3 +66,5 @@ ReactDOM.render(
 // ii.  Current selected itm.
 // iii. Data from a server
 // iv.  Open/closed  state e.g sidebars
+// v. Think declaratively
+// try to give state to components the upper components and pass props down to the statelesss components.
