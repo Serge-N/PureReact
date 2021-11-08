@@ -6,7 +6,7 @@ const InputExample = () => {
     const [text, setText] = useState("");
 
     const handleChange = (e) => {
-      //  setText(e.target.value);
+       setText(e.target.value);
     };
 
     return (
