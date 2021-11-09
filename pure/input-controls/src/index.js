@@ -6,7 +6,7 @@ const InputExample = () => {
     const [text, setText] = useState("");
 
     const handleChange = (e) => {
-       setText(e.target.value);
+        setText(e.target.value);
     };
 
     return (
@@ -17,6 +17,26 @@ const InputExample = () => {
     );
 }
 
+const NoNumbersInput = () => {
 
+    const [text, setText] = useState("");
+    const handleChange = event => {
+        let text = event.target.value; setText(
+            text.replace(/[0-9]/g, '')
+        );
+    };
+    return (
+        <input
+            type="text"
+            placeholder="No number allowed"
+            value={text}
+            onChange={handleChange} />);
+}
+const Container = () => (
+    <div>
+        <InputExample />
+        <NoNumbersInput />
+    </div>
+);
 
-ReactDOM.render(<InputExample/>, document.getElementById("root"));
+ReactDOM.render(<Container />, document.getElementById("root"));
