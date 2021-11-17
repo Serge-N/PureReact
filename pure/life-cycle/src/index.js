@@ -115,8 +115,6 @@ class LifecycleDemo extends React.Component {
     }
 }
 
-
-
 ReactDOM.render(
     <ErrorCatcher>
         <LifecycleDemo />
