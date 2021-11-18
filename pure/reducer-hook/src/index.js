@@ -24,7 +24,7 @@ function Counter() {
     );
 }
 
-// could have rwriteen inside the function for reuse
+// could have writeen inside the function for reuse
 const reducer = (state, action) => {
     switch (action.type) {
         case 'add': return [
@@ -68,6 +68,8 @@ function ShoppingList() {
                     </li>
                 ))}
             </ul>
+
+            
         </>
     );
 }
