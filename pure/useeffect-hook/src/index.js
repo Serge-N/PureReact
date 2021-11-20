@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 
 const LogEffect = () => {
@@ -9,49 +9,55 @@ const LogEffect = () => {
     });
 
     return (<input value={text} onChange={e => setText(e.target.value)} />);
-
-
 };
 
 // focusing input auomatically
 function App() {
-    const inputRef = useRef();
 
-    const [value, setValue] = useState("");
+    const [inputValue, setValue] = useState("reactjs");
+    const [subreddit, setSubreddit] = useState(inputValue);
 
-    useEffect(() => {
-        console.log("render");
-        inputRef.current.focus();
-    },
-        [inputRef]);
+    const handleChange = e => {
+        e.preventDefault();
+        setSubreddit(inputValue);
+    };
 
-    return (<input ref={inputRef} value={value} onChange={e => setValue(e.target.value)} />);
+    return (
+        <>
+            <form onSubmit={handleChange}>
+                <input value={inputValue} onChange={e => setValue(e.target.value)} />
+            </form>
+            <Reddit subreddit={subreddit} />
+        </>
+    );
 }
+
 // data fetching
-function Reddit() {
+function Reddit({ subreddit }) {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
         // Fetch the data when the component mounts 
-        fetch("https://www.reddit.com/r/reactjs.json")
-        .then(res => res.json()) 
-        .then(json =>
+        fetch(`https://www.reddit.com/r/${subreddit}.json`)
+            .then(res => res.json())
+            .then(json =>
                 // Save the posts into state
-        setPosts(json.data.children.map(c => c.data)) )
-          }); // <-- we didn't pass the 2nd arg. what will happen?
-        
+                setPosts(json.data.children.map(c => c.data)))
+    }, [subreddit, setPosts]);
 
     return (
-        <ul>
-            {posts.map(post => <li key={post.id}>{post.title}</li>)}
-        </ul>);
+        <div>
+            <br />
+            <ul>
+                {posts.map(post => <li key={post.id}>{post.title}</li>)}
+            </ul>
+        </div>
+    );
 }
 
 ReactDOM.render(
     <div>
         <App />
-        <br/>
+        <br />
         <LogEffect />
-        <br/>
-        <Reddit />
     </div>,
     document.getElementById("root"));
