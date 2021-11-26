@@ -6,7 +6,7 @@ import "./index.css";
 const UseAvatar = ({ user, size }) => (
     <img src={user.avatar}
         alt={user.name}
-        className={`avatar avatar-${size}`} />
+        className={`avatar avatar-${size || ""}`} />
 );
 
 const UserStatus = ({ user }) => (
@@ -22,10 +22,10 @@ const UserStatus = ({ user }) => (
     </div>
 );
 
-
-const Nav = ({user}) => (
+// Accept children and render them
+const Nav = ({children}) => (
     <div className="nav">
-        <UseAvatar user={user} size="small" />
+        {children}
     </div>
 );
 
@@ -34,24 +34,24 @@ const Content = () => (
 );
 
 
-const Sidebar = ({ user }) => (
+const Sidebar = ({ children }) => (
     <div className="sidebar">
-        <UserStatus user={user} />
+      {children}
     </div>
 );
 
-const Body = ({ user }) => (
+const Body = ({ sidebar, cfontent }) => (
     <div className="body">
-        <Sidebar user={user} />
-        <Content />
+        <Sidebar>{sidebar}</Sidebar>
+        {Content}
     </div>
 );
 
 class App extends React.Component {
     state = {
         user: {
-            avatar: "https://avatars0.githubusercontent.com/u/17098?v=3&s=460",
-            name: "Mateusz",
+            avatar: "https://avatars.githubusercontent.com/u/51508252?v=4",
+            name: "Serge-N",
             following: "100",
             followers: "130"
         }
@@ -60,11 +60,17 @@ class App extends React.Component {
     render() {
         return (
             <div className="app">
-                <Nav user={this.state.user} />
-                <Body user={this.state.user} />
+                <Nav>
+                    <UseAvatar user={this.user} size="small"/>
+                </Nav>
+                <Body sidebar={<UserStatus user={this.user}/>}/>
             </div>
         );
     }
 };
 
 ReactDOM.render(<App />, document.getElementById("root"));
+
+// One can reuse components -> Pass data around.
+// One can pass components as children to other components -> Children.
+// One can use the context API to pass data around.
