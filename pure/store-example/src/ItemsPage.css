@@ -1,0 +1,7 @@
+.items-page-items { 
+    margin: 0; padding: 0;
+}
+.items-page-items li {
+    list-style: none;
+    margin-bottom: 20px; 
+}

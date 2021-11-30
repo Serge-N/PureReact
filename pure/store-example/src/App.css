@@ -28,3 +28,16 @@ margin: 0 auto;
 .app-content{
     margin:0 20px;
 }
+
+.app-nav-item button:hover { 
+    color: #999;
+}
+
+.selected {
+    border-bottom-style: solid;
+    border-bottom-color: coral;
+}
+
+.good-space{
+    margin: 30px;
+}
