@@ -1,24 +1,20 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import "./App.css";
+import ItemsPage from "./ItemsPage";
+import { items } from "./static-data";
 
 const Content = ({ tab }) => {
     switch (tab) {
         default:
         case "items":
-            return <Items />;
+            return <ItemsPage items={items}/>
         case "cart":
             return <Cart />;
     }
 }
 
-function Items() {
-    return (
-        <div>
-            <h1>Items</h1>
-        </div>
-    );
-}
+
 
 const Cart = () => {
     return (<div>
