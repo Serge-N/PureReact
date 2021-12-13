@@ -5,13 +5,13 @@ import ItemsPage from "./ItemsPage";
 import CartPage from "./CartPage";
 import { items } from "./static-data";
 
-const Content = ({ tab, onAddToCart, cart }) => {
+const Content = ({ tab, onAddToCart, onRemoveItem, cart }) => {
     switch (tab) {
         default:
         case "items":
             return <ItemsPage items={items} onAddToCart={onAddToCart} />
         case "cart":
-            return <CartPage  items={cart}/>;
+            return <CartPage items={cart} onAddOne={onAddToCart} onRemoveOne={onRemoveItem} />;
     }
 }
 
@@ -27,6 +27,18 @@ const App = () => {
         return Object.values(groupedItems);
     }
 
+    const removeItem = item => {
+        let index = cart.findIndex(i => i.id === item.id);
+        if (index >= 0) {
+            setCart(cart => {
+                const copy = [...cart];
+                copy.splice(index, 1);
+                return copy;
+            });
+        }
+    };
+
+
     const [activeTab, setActiveTab] = useState("items");
     const [cart, setCart] = useState([]);
 
@@ -38,11 +50,12 @@ const App = () => {
         <div className="app">
             <Nav activeTab={activeTab} onTabChange={setActiveTab} />
             <main className="app-content">
-                <div className="good-space">
-                    <Content tab={activeTab} 
-                             onAddToCart={addToCart} 
-                             cart={summarizeCart(cart)} />
-                </div>
+                <Content
+                    tab={activeTab}
+                    onAddToCart={addToCart}
+                    onRemoveItem={removeItem}
+                    cart={summarizeCart(cart)}
+                />
             </main>
         </div>
     );
