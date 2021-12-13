@@ -1,0 +1,43 @@
+.app {
+max-width: 800px;
+margin: 0 auto;
+}
+.app-nav{
+    margin: 20px;
+    padding: 10px;
+    border-bottom: 2px solid #508fca;
+}
+
+.app-nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.app-nav button{
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.app-nav-item{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.app-content{
+    margin:0 20px;
+}
+
+.app-nav-item button:hover { 
+    color: #999;
+}
+
+.selected {
+    border-bottom-style: solid;
+    border-bottom-color: coral;
+}
+
+.good-space{
+    margin: 30px;
+}
